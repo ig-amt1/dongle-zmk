@@ -19,7 +19,73 @@
 #
 ---
 include:
+  #- board: nice_nano_v2
+   # shield: corne_left
+ # - board: nice_nano_v2
+ #   shield: corne_right
+
+
+
   - board: nice_nano_v2
-    shield: corne_left
+    shield: corne_left nice_view_adapter nice_view_gem
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_View\"
+    artifact-name: nice_corne_left_view
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
-    shield: corne_right
+    shield: corne_right nice_view_adapter nice_view_gem
+    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
+    artifact-name: nice_corne_right_view
+
+  # peripheral_left + nice_nano_v2 + nice_view_gem
+  - board: nice_nano_v2
+    shield: corne_left_peripheral nice_view_adapter nice_view_gem
+    cmake-args: -DCONFIG_NICE_VIEW_GEM_ANIMATION=y
+    artifact-name: nice_corne_left_peripheral_view
+
+      ### nice_oled START ###
+    # nice_nano_v2 + nice_oled
+  - board: nice_nano_v2
+    shield: corne_left nice_oled
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Corne_Oled\"
+    artifact-name: nice_corne_left_oled
+    snippet: studio-rpc-usb-uart
+  - board: nice_nano_v2
+    shield: corne_right nice_oled
+    artifact-name: nice_corne_right_oled
+
+
+    # peripheral_left + nice_nano_v2 + nice_oled
+  - board: nice_nano_v2
+    shield: corne_left_peripheral nice_oled
+    artifact-name: nice_corne_left_peripheral_oled
+
+
+    ### ProMicro_Dongle START ###
+    # nice_nano_v2 dongle
+  - board: nice_nano_v2
+    shield: corne_dongle_pro_micro
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle\"
+    artifact-name: nice_corne_dongle_pro_micro
+    snippet: studio-rpc-usb-uart
+    # snippet: zmk-usb-logging
+  - board: nice_nano_v2
+    shield: corne_dongle_pro_micro dongle_display
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle_O\"
+    artifact-name: nice_corne_dongle_oled
+    snippet: studio-rpc-usb-uart
+    # snippet: zmk-usb-logging
+  - board: puchi_ble_v1
+    shield: corne_dongle_pro_micro
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle\"
+    artifact-name: puchi_corne_dongle
+    snippet: studio-rpc-usb-uart
+    # snippet: zmk-usb-logging
+  - board: puchi_ble_v1
+    shield: corne_dongle_pro_micro nice_view_adapter nice_view_gem
+    #  -DCONFIG_ZMK_USB=y  -DCONFIG_ZMK_BLE=y
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Puchi_Dongle_V\"  -DCONFIG_ZMK_STUDIO=y
+    snippet: studio-rpc-usb-uart
+    artifact-name: puchi_corne_dongle_view
+    # snippet: zmk-usb-logging
+    ### Pro Micro END ###
+  ### CORNE END ###
