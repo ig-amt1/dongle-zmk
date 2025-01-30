@@ -1,5 +1,15 @@
 #include <dt-bindings/led/led.h>
 
+&ble {
+    status = "okay";  // Habilita o BLE
+};
+
+/ {
+    chosen {
+        zmk,split = &ble;  // Agora "ble" está definido
+    };
+};
+
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
