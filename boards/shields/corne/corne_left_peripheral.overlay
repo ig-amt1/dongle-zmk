@@ -6,6 +6,8 @@
 
 #include "corne.dtsi"
 
+&ble { status = "okay"; };
+
 &kscan0 {
     col-gpios
         = <&pro_micro 21 GPIO_ACTIVE_HIGH>
