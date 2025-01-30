@@ -1,5 +1,7 @@
 #include <dt-bindings/led/led.h>
 
+&ble { status = "okay"; };
+
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
