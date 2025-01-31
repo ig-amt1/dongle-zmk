@@ -6,7 +6,7 @@
 
 #include "corne.dtsi"
 
-&ble { status = "okay"; };
+/*&ble { status = "okay"; };*/
 
 &kscan0 {
     col-gpios
