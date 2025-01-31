@@ -1,17 +1,15 @@
 #include <dt-bindings/led/led.h>
 
-# &ble { status = "okay"; };
-
 / {
+    // Define o nó BLE
     ble: ble {
-        compatible = "zmk,ble";  // Define o nó BLE do ZMK
+        compatible = "zmk,ble";
         status = "okay";
     };
-};
 
-/ {
+    // Configuração do split
     chosen {
-        zmk,split = &ble;  // Referência válida agora
+        zmk,split = &ble;
     };
 };
 
