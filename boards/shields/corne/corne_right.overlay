@@ -5,6 +5,12 @@
  */
 
 #include "corne.dtsi"
+/ {
+    chosen {
+        zmk,matrix_transform = &default_transform_right;
+    };
+};
+
 &ble { status = "okay"; };
 
 &default_transform {
