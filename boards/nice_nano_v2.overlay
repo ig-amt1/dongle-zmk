@@ -1,6 +1,19 @@
 #include <dt-bindings/led/led.h>
 
-&ble { status = "okay"; };
+# &ble { status = "okay"; };
+
+/ {
+    ble: ble {
+        compatible = "zmk,ble";  // Define o nó BLE do ZMK
+        status = "okay";
+    };
+};
+
+/ {
+    chosen {
+        zmk,split = &ble;  // Referência válida agora
+    };
+};
 
 &pinctrl {
     spi3_default: spi3_default {
