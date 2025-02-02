@@ -5,16 +5,15 @@
  # build:
   #  uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 
+ name: Build ZMK Firmware
 
-name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      board: nice_nano_v2  # Alvo principal
-      shield: corne_dongle_pro_micro  # Shield específico
-      config_dir: config  # Pasta de configuração
-    permissions:
-      actions: write  # Permite comunicação com o GitHub Actions
+      # Configurações específicas do seu repositório
+      user_config: "ig-amt1/dongle-zmk"
+      user_config_branch: "main"
+      artifact_name: "CORNE"
